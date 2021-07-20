@@ -7,7 +7,7 @@
         public CustomerService()
         {
             _customerBusinessLogic = new CustomerBusinessLogic();
-            _customerBusinessLogic.DataAccess = new CustomerDataAccess();
+            ((IDataAccessDependency)_customerBusinessLogic).SetDependency(new CustomerDataAccess());
         }
 
         public string GetCustomerName(int id)

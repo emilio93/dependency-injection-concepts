@@ -1,19 +1,21 @@
 ﻿namespace DependencyInjection
 {
-    class CustomerBusinessLogic
+    class CustomerBusinessLogic : IDataAccessDependency
     {
+        private ICustomerDataAccess _dataAccess;
+
         public CustomerBusinessLogic()
         {
         }
 
         public string GetCustomerName(int id)
         {
-            return DataAccess.GetCustomerName(id);
+            return _dataAccess.GetCustomerName(id);
         }
 
-        public ICustomerDataAccess DataAccess { 
-            get;
-            set;
+        public void SetDependency(ICustomerDataAccess customerDataAccess)
+        {
+            _dataAccess = customerDataAccess;
         }
     }
 }
