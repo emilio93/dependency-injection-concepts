@@ -6,12 +6,13 @@
 
         public CustomerService()
         {
-            _customerBusinessLogic = new CustomerBusinessLogic(new CustomerDataAccess());
+            _customerBusinessLogic = new CustomerBusinessLogic();
+            _customerBusinessLogic.DataAccess = new CustomerDataAccess();
         }
 
         public string GetCustomerName(int id)
         {
-            return _customerBusinessLogic.ProcessCustomerData(id);
+            return _customerBusinessLogic.GetCustomerName(id);
         }
     }
 }
