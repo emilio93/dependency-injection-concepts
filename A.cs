@@ -10,12 +10,11 @@ namespace DependencyInjection
     {
         // class A is dependent on class B
         // class B is a dependency of A
-        // in this case class A manages the lifetime of class B
         B b;
 
         public A()
         {
-            b = new B();
+            b = Factory.GetObjectOfB();
         }
 
         public void Task1()
