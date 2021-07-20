@@ -1,8 +1,8 @@
 ﻿namespace DependencyInjection
 {
-    class DataAccess
+    class CustomerDataAccess : ICustomerDataAccess
     {
-        public DataAccess()
+        public CustomerDataAccess()
         {
         }
 

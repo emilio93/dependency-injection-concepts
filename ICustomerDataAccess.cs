@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection
 {
-    class DataAccessFactory
+    public interface ICustomerDataAccess
     {
-        public static ICustomerDataAccess GetCustomerDataAccessObj()
-        {
-            return new CustomerDataAccess();
-        }
+        string GetCustomerName(int id);
     }
 }

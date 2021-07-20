@@ -2,14 +2,15 @@
 {
     class CustomerBusinessLogic
     {
+        private ICustomerDataAccess _customerDataAccess;
         public CustomerBusinessLogic()
         {
+            _customerDataAccess = DataAccessFactory.GetCustomerDataAccessObj();
         }
 
         public string GetCustomerName(int id)
         {
-            DataAccess _dataAccess = DataAccessFactory.GetDataAccessObj();
-            return _dataAccess.GetCustomerName(id);
+            return _customerDataAccess.GetCustomerName(id);
         }
     }
 }
