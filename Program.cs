@@ -11,8 +11,12 @@ namespace DependencyInjection
             container.RegisterType<ICar, BMW>();
             container.RegisterType<ICarKey, BMWKey>();
             container.RegisterType<Driver>(new InjectionConstructor(
-                container.Resolve<ICar>(), 
-                container.Resolve<ICarKey>()
+                new object[]
+                {
+                    new Audi(),
+                    new AudiKey(),
+                    "Steve"
+                }
             ));
 
             var driver = container.Resolve<Driver>();
