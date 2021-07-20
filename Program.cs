@@ -1,11 +1,15 @@
-﻿namespace DependencyInjection
+﻿using Unity;
+
+namespace DependencyInjection
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Driver driver = new Driver(new BMW());
+            IUnityContainer container = new UnityContainer();
+            container.RegisterType<ICar, BMW>();
 
+            var driver = container.Resolve<Driver>();
             driver.RunCar();
         }
     }
