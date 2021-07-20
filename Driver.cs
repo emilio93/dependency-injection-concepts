@@ -9,7 +9,6 @@ namespace DependencyInjection
         {
         }
 
-        [Dependency("LuxuryCar")]
         public ICar Car
         {
             get;
