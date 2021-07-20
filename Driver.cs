@@ -11,7 +11,6 @@ namespace DependencyInjection
         {
         }
 
-        [InjectionMethod]
         public void UseCar(ICar car)
         {
             _car = car;

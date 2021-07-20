@@ -8,7 +8,10 @@ namespace DependencyInjection
         static void Main(string[] args)
         {
             IUnityContainer container = new UnityContainer();
-            container.RegisterType<ICar, BMW>();
+            container.RegisterType<Driver>(new InjectionMethod(
+                "UseCar",
+                new Audi()
+            ));
 
             var driver = container.Resolve<Driver>();
             driver.RunCar();
