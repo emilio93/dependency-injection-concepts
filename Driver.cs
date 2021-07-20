@@ -5,20 +5,22 @@ namespace DependencyInjection
 {
     public class Driver
     {
+        private ICar _car;
+
         public Driver()
         {
         }
 
-        public ICar Car
+        [InjectionMethod]
+        public void UseCar(ICar car)
         {
-            get;
-            set;
+            _car = car;
         }
 
         public void RunCar()
         {
             Console.WriteLine(
-                $"Running {Car.GetType().Name} - {Car.Run()} mile."
+                $"Running {_car.GetType().Name} - {_car.Run()} mile."
             );
         }
     }
