@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity;
 
 namespace DependencyInjection
 {
@@ -7,10 +8,15 @@ namespace DependencyInjection
         private ICar _car = null;
         private ICarKey _key = null;
 
+        [InjectionConstructor]
         public Driver(ICar car, ICarKey key)
         {
             _car = car;
             _key = key;
+        }
+
+        public Driver(string name)
+        {
         }
 
         public void RunCar()
