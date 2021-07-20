@@ -19,14 +19,18 @@ namespace DependencyInjection
                 var wantToSave = Console.ReadLine();
 
                 if (wantToSave.ToUpper() == "Y")
+                {
                     SaveToDB(firstName, lastName);
+                }
 
                 Console.Write("Do you want to exit? Y/N: ");
 
                 var wantToExit = Console.ReadLine();
 
                 if (wantToExit.ToUpper() == "Y")
+                {
                     continueExecution = false;
+                }
 
             } while (continueExecution);
 
