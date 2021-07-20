@@ -5,26 +5,21 @@ namespace DependencyInjection
 {
     public class Driver
     {
-        private ICar _car = null;
-        private ICarKey _key = null;
-        private string _name = string.Empty;
-
-        public Driver(ICar car, ICarKey key, string driverName)
+        public Driver()
         {
-            _car = car;
-            _key = key;
-            _name = driverName;
         }
 
-        public Driver(string name)
+        [Dependency]
+        public ICar Car
         {
+            get;
+            set;
         }
 
         public void RunCar()
         {
             Console.WriteLine(
-                $"{_name} is running {_car.GetType().Name} " +
-                $"with {_key.GetType().Name} - {_car.Run()} mile."
+                $"Running {Car.GetType().Name} - {Car.Run()} mile."
             );
         }
     }
