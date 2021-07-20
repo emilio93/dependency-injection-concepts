@@ -8,7 +8,6 @@ namespace DependencyInjection
         private ICar _car = null;
         private ICarKey _key = null;
 
-        [InjectionConstructor]
         public Driver(ICar car, ICarKey key)
         {
             _car = car;
